@@ -16,7 +16,8 @@ public class Publisher {
     private String city;
     private String state;
     private String zip;
-    @OneToMany(mappedBy = "publisher")
+    @OneToMany
+    @JoinColumn(name = "publisher_id")
     private Set<Book> books = new HashSet<>();
 
     public Publisher() {

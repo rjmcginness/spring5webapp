@@ -17,8 +17,7 @@ public class Book {
             inverseJoinColumns = @JoinColumn(name = "author_id"))
     private Set<Author> authors = new HashSet<>();
 
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="publisher_id")
+    @ManyToOne
     private Publisher publisher;
 
     public Book() {

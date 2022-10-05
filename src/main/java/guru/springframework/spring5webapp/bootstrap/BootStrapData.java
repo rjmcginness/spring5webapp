@@ -45,15 +45,13 @@ public class BootStrapData implements CommandLineRunner {
                                         "Massachusetts",
                                         "01225");
 
-        pub.getBooks().add(moby);
-        pub.getBooks().add(j2ee);
-        moby.setPublisher(pub);
-        j2ee.setPublisher(pub);
-        this.publisherRepository.save(pub);
         this.authorRepository.save(rod);
         this.authorRepository.save(herman);
         this.bookRepository.save(j2ee);
         this.bookRepository.save(moby);
+        pub.getBooks().add(moby);
+        pub.getBooks().add(j2ee);
+        this.publisherRepository.save(pub);
 
         System.out.println("Started in bootstrap");
         System.out.println("Number of books: " + this.bookRepository.count());
